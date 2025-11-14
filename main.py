@@ -102,14 +102,8 @@ Resposta:
     return resposta.text.strip()
 
 @app.route("/")
-def chatbot():
-    return send_from_directory(".", "chatBot.html")
-
-
-@app.route("/<path:arquivo>")
-def arquivos(arquivo):
-    return send_from_directory(".", arquivo)
-
+def index():
+    return render_template("chatBot.html")  
 
 # 🔹 API do chatbot
 @app.route("/chat", methods=["POST"])
